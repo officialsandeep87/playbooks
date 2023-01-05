@@ -1,0 +1,11 @@
+---
+- name: remove webserver
+  hosts: all
+  gather_facts: no
+  become: true
+  tasks:
+    - name: httpd removed
+      ansible.builtin.yum:
+        name: httpd
+        state: removed
+...
