@@ -1,0 +1,11 @@
+---
+- name: remove podman
+  hosts: all
+  gather_facts: no
+  become: true
+  tasks:
+    - name: remove
+      ansible.builtin.yum:
+        name: podman
+        state: removed
+...
